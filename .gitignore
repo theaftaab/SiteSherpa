@@ -229,3 +229,6 @@ Thumbs.db
 # Secrets and credentials
 secrets.json
 config/*.secret.yaml
+
+# Playground notebooks
+notebooks/*
