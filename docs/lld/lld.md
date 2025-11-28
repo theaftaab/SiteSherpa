@@ -50,3 +50,25 @@ class PageContent:
     + to_dict(self)
 
 ```
+---
+
+## FormScraper Class:
+
+* **Purpose** : To extract and build structured schema for forms present in the website
+
+```python
+class FormField:
+    name: str
+    type: str
+    label: str | None
+    required: bool
+    options: list[str] | None = None
+    pattern: str | None = None
+    placeholder: str | None = None
+
+class FormSchema:
+    form_id: str
+    action_url: str
+    method: str
+    fields: list[FormField]
+```
