@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complex Form Test</title>
+</head>
+<body>
+
+<h1>Complex User Registration Form</h1>
+
+<form id="registrationForm" action="/submit" method="post">
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="your username" required>
+
+    <br><br>
+
+    <label>Email Address
+        <input type="email" name="email" id="email" required>
+    </label>
+
+    <br><br>
+
+    <input type="password" name="password" placeholder="Your password" required pattern=".{8,}">
+
+    <br><br>
+
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age">
+
+    <br><br>
+
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+        <option value="">Choose one</option>
+        <option>USA</option>
+        <option>Canada</option>
+        <option>Germany</option>
+        <option>Japan</option>
+    </select>
+
+    <br><br>
+
+    <!-- Checkbox group -->
+    <label>Interests:</label><br>
+    <label><input type="checkbox" name="interests" value="coding"> Coding</label>
+    <label><input type="checkbox" name="interests" value="music"> Music</label>
+    <label><input type="checkbox" name="interests" value="sports"> Sports</label>
+
+    <br><br>
+
+    <!-- Radio group -->
+    <label>Subscription Plan:</label><br>
+    <label><input type="radio" name="plan" value="basic" required> Basic</label>
+    <label><input type="radio" name="plan" value="pro"> Pro</label>
+    <label><input type="radio" name="plan" value="enterprise"> Enterprise</label>
+
+    <br><br>
+
+    <label for="bio">Short Bio</label>
+    <textarea id="bio" name="bio" placeholder="Tell us about yourself..."></textarea>
+
+    <br><br>
+
+    <!-- Hidden field -->
+    <input type="hidden" name="csrf_token" value="1234567890">
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

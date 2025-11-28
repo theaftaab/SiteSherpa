@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from .page_scraper import PageScraper
+from .form_scraper import FormScraper
 from .models.page_content import PageContent
 from urllib.parse import urljoin, urlparse, urldefrag
 from collections import deque
@@ -11,6 +12,7 @@ class WebScraper:
         self.stay_in_path = stay_in_path
         self.visited = set()
         self.page_scraper = PageScraper()
+        self.form_scraper = FormScraper()
 
     async def crawl(self, start_url: str) -> list[PageContent]:
         parsed_start = urlparse(start_url)
@@ -79,13 +81,15 @@ class WebScraper:
         text = self.page_scraper.extract_text(html)
         metadata = self.page_scraper.extract_metadata(html)
 
+        forms = self.form_scraper.extract_fields(html,base_url=url)
+
         return PageContent(
             url=url,
             title=title,
             text=text,
             metadata=metadata,
             raw_html=html,
-            forms=None
+            forms=forms
         )
 
     def extract_links(self, html: str, base_url: str) -> list[str]:
