@@ -1,0 +1,65 @@
+{
+  "root_url": "http://localhost:3000/",
+  "pages": {
+    "/": {
+      "url": "http://localhost:3000/",
+      "title": "Karnataka Forest Department",
+      "text": "Karnataka Forest Department Karnataka Forest Department Home About Contact Welcome to Karnataka Forest Department Website Home Page This is your main home page content. The voice assistant is now available globally and will appear on all pages through the layout.",
+      "metadata": {
+        "viewport": "width=device-width, initial-scale=1",
+        "description": "Karnataka Forest Department"
+      },
+      "forms": []
+    },
+    "/about": {
+      "url": "http://localhost:3000/about",
+      "title": "Karnataka Forest Department",
+      "text": "Karnataka Forest Department Karnataka Forest Department Home About Contact About page",
+      "metadata": {
+        "viewport": "width=device-width, initial-scale=1",
+        "description": "Karnataka Forest Department"
+      },
+      "forms": []
+    },
+    "/contact-form": {
+      "url": "http://localhost:3000/contact-form",
+      "title": "Karnataka Forest Department",
+      "text": "Karnataka Forest Department Karnataka Forest Department Home About Contact Contact Form Submit",
+      "metadata": {
+        "viewport": "width=device-width, initial-scale=1",
+        "description": "Karnataka Forest Department"
+      },
+      "forms": []
+    },
+    "/felling-transit-permission": {
+      "url": "http://localhost:3000/felling-transit-permission",
+      "title": "Karnataka Forest Department",
+      "text": "Karnataka Forest Department Karnataka Forest Department Home About Contact ವೃಕ್ಷ ಕಡಿಯುವ ಅನುಮತಿ ಮನವಿ / Tree Felling Permission Request ಮರ ಕಡಿಯುವಿಕೆ ಕೇಳಲಾಗುವ ಸ್ಥಳದ ಮಾಹಿತಿ / Location Details ಪ್ರದೇಶದ ವಿಧ / Area Type Select Area Type ನಗರ/ಪಟ್ಟಣ ಪ್ರದೇಶ / Urban Area (ULB Including Corporations, Municipalities etc..) ಗ್ರಾಮೀಣ ಪ್ರದೇಶ / Rural Area ಜಿಲ್ಲೆ / District * Select District Bagalkote Ballari (Bellary) Belagavi (Belgaum) Bengaluru Rural Bengaluru Urban Bidar Chamarajanagar Chikkaballapur Chikkamagaluru (Chikmagalur) Chitradurga Dakshina Kannada Davanagere Dharwad Gadag Hassan Haveri Kalaburagi (Gulbarga) Kodagu (Coorg) Kolar Koppal Mandya Mysuru (Mysore) Raichur Ramanagara Shivamogga (Shimoga) Tumakuru (Tumkur) Udupi Uttara Kannada (Karwar) Vijayapura (Bijapur) Yadgir ತಾಲೂಕು / Taluk ಗ್ರಾಮ / Village ಖಾತಾ ಸಂಖ್ಯೆ / Khata Number ಸರ್ವೇ ಸಂಖ್ಯೆ / Survey Number Total Extent Acres Guntas Anna Total Acres ಅರ್ಜಿದಾರರ ವಿವರಗಳು / Applicant Details ಅರ್ಜಿದಾರರ ವಿಧ / Applicant Type * Select Applicant Type Individual / ವೈಯಕ್ತಿಕ Entity / ಸಂಸ್ಥೆ GPA Holder / ಜಿಪಿಎ ಧಾರಕ ಅರ್ಜಿದಾರರ ಹೆಸರು / Applicant Name * ತಂದೆಯ ಹೆಸರು / Father's Name * ವಿಳಾಸ / Address * ಜಿಲ್ಲೆ / District * ತಾಲೂಕು / Taluk * ಪಿನ್ ಕೋಡ್ / Pincode * ಮೊಬೈಲ್ ಸಂಖ್ಯೆ / Mobile Number * ಇಮೇಲ್ ಐಡಿ / Email ID ಮರದ ವಿವರಗಳು / Tree Details ಮರದ ಜಾತಿ / Tree Species * ಮರದ ವಯಸ್ಸು / Tree Age (Years) * ಮರದ ಸುತ್ತಳತೆ / Tree Girth (cm) * ಸ್ಥಳದ ಗಡಿ ವಿವರಗಳು / Site Boundary Details ಪೂರ್ವ / East * ಪಶ್ಚಿಮ / West * ಉತ್ತರ / North * ದಕ್ಷಿಣ / South * ಇತರ ವಿವರಗಳು / Other Details ಮರಗಳ ಕತ್ತರಿಸುವ ಉದ್ದೇಶ / Purpose for Tree Felling Whether boundary is demarcated properly? Whether tree is reserved to Government? Unconditional consent obtained? License/Certificate enclosed? ಫೈಲ್ ಅಪ್‌ಲೋಡ್ / File Uploads Survey Sketch File No file selected Khata Extract File No file selected Land Certificate File No file selected RTC File No file selected Affidavit File No file selected Applicant Signature File No file selected Declaration / ಘೋಷಣೆ I/We therefore request you to accord permission to fell trees from survey number mentioned above. I/We undertake to: Furnish other particulars if required by Tree Officer during inspection. Deposit money as demanded by Karnataka Forest Department as per existing rules. ಮೇಲೆ ತಿಳಿಸಿದ ಷರತ್ತುಗಳಿಗೆ ನಾನು ಒಪ್ಪುತ್ತೇನೆ / Agree ವಿರುದ್ಧಿಸು / Decline Submit Application / ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
+      "metadata": {
+        "viewport": "width=device-width, initial-scale=1",
+        "description": "Karnataka Forest Department"
+      },
+      "forms": [
+        {
+          "form_id": "form_6520bc7a",
+          "action_url": "http://localhost:3000/felling-transit-permission",
+          "method": "",
+          "fields": [
+            {
+              "name": "terms",
+              "type": "radio",
+              "label": null,
+              "required": false,
+              "options": [
+                "ಮೇಲೆ ತಿಳಿಸಿದ ಷರತ್ತುಗಳಿಗೆ ನಾನು ಒಪ್ಪುತ್ತೇನೆ / Agree",
+                "ವಿರುದ್ಧಿಸು / Decline"
+              ],
+              "pattern": null,
+              "placeholder": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

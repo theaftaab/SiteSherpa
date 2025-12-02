@@ -2,9 +2,12 @@ from bs4 import BeautifulSoup
 from .page_scraper import PageScraper
 from .form_scraper import FormScraper
 from .models.page_content import PageContent
+from ..knowledgebase.kb_core import KnowledgeBase
 from urllib.parse import urljoin, urlparse, urldefrag
 from collections import deque
 from playwright.async_api import async_playwright
+from pathlib import PurePosixPath
+import asyncio
 
 class WebScraper:
     def __init__(self, max_depth=3, stay_in_path=False):
@@ -13,6 +16,7 @@ class WebScraper:
         self.visited = set()
         self.page_scraper = PageScraper()
         self.form_scraper = FormScraper()
+        self.kb = KnowledgeBase()
 
     async def crawl(self, start_url: str) -> list[PageContent]:
         parsed_start = urlparse(start_url)
@@ -23,11 +27,12 @@ class WebScraper:
         if not allowed_path_prefix.endswith("/"):
             allowed_path_prefix += "/"
 
+        
         queue = deque([(start_url, 0)])
         results = []
 
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
+            browser = await p.chromium.launch(headless=True,slow_mo=250)
             page = await browser.new_page()
 
             while queue:
@@ -49,9 +54,12 @@ class WebScraper:
 
                 # Restrict to starting subpath only
                 if self.stay_in_path:
-                    # Ensure all crawled URLs remain inside the start path
-                    if not parsed_url.path.startswith(allowed_path_prefix):
+                    start_path = parsed_start.path.rstrip("/") + "/"
+                    current_path = parsed_url.path.rstrip("/") + "/"
+
+                    if not current_path.startswith(start_path):
                         continue
+
 
                 try:
                     print(f"Scraping: {url}")
@@ -59,10 +67,21 @@ class WebScraper:
                     results.append(page_content)
                     self.visited.add(url)
 
+                    self.kb.add_page_content(page_content)
+
                     links = self.extract_links(page_content.raw_html, url)
 
                     for link in links:
                         link, _ = urldefrag(link)
+                        parsed = urlparse(link)
+                        if f"{parsed.scheme}://{parsed.netloc}" != scheme_domain:
+                            continue
+                        if self.stay_in_path:
+                            start_path = parsed_start.path.rstrip("/") + "/"
+                            current_path = parsed.path.rstrip("/") + "/"
+                            if not current_path.startswith(start_path):
+                                continue
+
                         if link not in self.visited:
                             queue.append((link, depth + 1))
 
